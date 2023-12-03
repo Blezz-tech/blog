@@ -9,7 +9,7 @@ instance View ShowView where
         {breadcrumb}
         <h1>{post.title}</h1>
         <p>{post.createdAt |> timeAgo}</p>
-        <p>{post.body}</p>
+        <p>{post.body |> renderMarkdown}</p>
 
     |]
         where
@@ -17,3 +17,9 @@ instance View ShowView where
                             [ breadcrumbLink "Posts" PostsAction
                             , breadcrumbText "Show Post"
                             ]
+
+
+renderMarkdown text =
+    case text |> MMark.parse "" of
+        Left error -> "Something went wrong"
+        Right markdown -> MMark.render markdown |> tshow |> preEscapedToHtml
