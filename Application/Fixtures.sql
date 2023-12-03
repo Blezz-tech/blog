@@ -24,15 +24,10 @@ ALTER TABLE public.posts ENABLE TRIGGER ALL;
 
 ALTER TABLE public.comments DISABLE TRIGGER ALL;
 
+INSERT INTO public.comments (id, post_id, author, body, created_at) VALUES ('2e7c8c87-85f5-4e2c-9d5d-8ebac000f51c', 'a0929c00-22ee-4646-814a-4479fa022801', 'Marc', 'Hello world!', '2023-12-03 19:57:22.21757+03');
+INSERT INTO public.comments (id, post_id, author, body, created_at) VALUES ('e56c5121-68fd-49a6-99e6-b0b6fbc5ea17', 'a0929c00-22ee-4646-814a-4479fa022801', 'Marc', 'I get cat!', '2023-12-03 19:57:30.801357+03');
 
 
 ALTER TABLE public.comments ENABLE TRIGGER ALL;
-
-
-ALTER TABLE public.schema_migrations DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.schema_migrations ENABLE TRIGGER ALL;
 
 
