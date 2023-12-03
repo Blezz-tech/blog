@@ -16,14 +16,24 @@ SET SESSION AUTHORIZATION DEFAULT;
 
 ALTER TABLE public.posts DISABLE TRIGGER ALL;
 
-INSERT INTO public.posts (id, title, body) VALUES ('a0929c00-22ee-4646-814a-4479fa022801', 'Hello World!', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam');
+INSERT INTO public.posts (id, title, body, created_at) VALUES ('a0929c00-22ee-4646-814a-4479fa022801', 'Hello World!', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam', '2023-12-03 18:16:00.929334+03');
 
 
 ALTER TABLE public.posts ENABLE TRIGGER ALL;
 
 
+ALTER TABLE public.comments DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.comments ENABLE TRIGGER ALL;
+
+
 ALTER TABLE public.schema_migrations DISABLE TRIGGER ALL;
 
+INSERT INTO public.schema_migrations (revision) VALUES (1701616213);
+INSERT INTO public.schema_migrations (revision) VALUES (1701616561);
+INSERT INTO public.schema_migrations (revision) VALUES (1701618172);
 
 
 ALTER TABLE public.schema_migrations ENABLE TRIGGER ALL;
