@@ -31,9 +31,6 @@ ALTER TABLE public.comments ENABLE TRIGGER ALL;
 
 ALTER TABLE public.schema_migrations DISABLE TRIGGER ALL;
 
-INSERT INTO public.schema_migrations (revision) VALUES (1701616213);
-INSERT INTO public.schema_migrations (revision) VALUES (1701616561);
-INSERT INTO public.schema_migrations (revision) VALUES (1701618172);
 
 
 ALTER TABLE public.schema_migrations ENABLE TRIGGER ALL;
